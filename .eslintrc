@@ -13,36 +13,32 @@
 		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended"
 	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"react-hooks",
+		"jsx-a11y",
+		"@typescript-eslint",
+		"simple-import-sort",
+		"import",
+		"prettier"
+	],
 	"overrides": [
 		{
-			"env": {
-				"jest/globals": true
-			},
-			"extends": [
-				"plugin:jest/recommended",
-				"plugin:jest/style",
-				"plugin:jest-dom/recommended",
-				"plugin:testing-library/react"
-			],
+			"extends": ["plugin:testing-library/react"],
 			"files": [
 				"**/__tests__/**/*.[jt]s?(x)",
 				"**/?(*.)+(spec|test).[jt]s?(x)"
 			],
-			"plugins": ["jest", "jest-dom", "testing-library"],
+			"plugins": ["testing-library"],
 			"rules": {
-				"jest/no-conditional-expect": "error",
-				"jest/no-disabled-tests": "warn",
-				"jest/no-focused-tests": "error",
-				"jest/no-identical-title": "error",
-				"jest/no-interpolation-in-snapshots": "error",
-				"jest/no-jasmine-globals": "error",
-				"jest/no-jest-import": "error",
-				"jest/no-mocks-import": "error",
-				"jest/prefer-to-have-length": "warn",
-				"jest/valid-describe-callback": "error",
-				"jest/valid-expect": "error",
-				"jest/valid-expect-in-promise": "error",
-				"jest/valid-title": "warn",
 				"testing-library/await-async-query": "error",
 				"testing-library/await-async-utils": "error",
 				"testing-library/no-await-sync-query": "error",
@@ -61,30 +57,9 @@
 				"testing-library/prefer-presence-queries": "error",
 				"testing-library/prefer-query-by-disappearance": "error",
 				"testing-library/prefer-screen-queries": "error",
-				"testing-library/render-result-naming-convention": "error",
-				"jest-dom/prefer-checked": "error",
-				"jest-dom/prefer-enabled-disabled": "error",
-				"jest-dom/prefer-required": "error",
-				"jest-dom/prefer-to-have-attribute": "error"
+				"testing-library/render-result-naming-convention": "error"
 			}
 		}
-	],
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": "latest",
-		"sourceType": "module"
-	},
-	"plugins": [
-		"react",
-		"react-hooks",
-		"jsx-a11y",
-		"@typescript-eslint",
-		"simple-import-sort",
-		"import",
-		"prettier"
 	],
 	"root": true,
 	"rules": {
@@ -114,6 +89,8 @@
 		"jsx-a11y/role-supports-aria-props": "warn",
 		"jsx-a11y/scope": "warn",
 		"react-hooks/rules-of-hooks": "error",
+		"react/prop-types": "off",
+		"react/react-in-jsx-scope": "off",
 		"simple-import-sort/exports": "error",
 		"simple-import-sort/imports": "error"
 	},
