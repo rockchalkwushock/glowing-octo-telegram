@@ -4,10 +4,10 @@ type Props = {
 	children?: ReactNode
 }
 
-export const ErrorOverlay: FC<Props> = ({ children }) => {
+export const LoadingOverlay: FC<Props> = ({ children }) => {
 	return (
 		<div className='flex flex-col justify-center items-center w-screen h-screen'>
-			<h1>Error...</h1>
+			<h1>Loading...</h1>
 			{children}
 		</div>
 	)

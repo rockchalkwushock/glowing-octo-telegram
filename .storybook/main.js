@@ -6,6 +6,15 @@ module.exports = {
 		'@storybook/addon-a11y',
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
+		'storybook-addon-react-router-v6',
+		{
+			name: '@storybook/addon-postcss',
+			options: {
+				postcssLoaderOptions: {
+					implementation: require('postcss'),
+				},
+			},
+		},
 		{
 			name: '@storybook/addon-storysource',
 			options: {

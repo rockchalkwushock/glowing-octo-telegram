@@ -1,13 +1,16 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { ErrorOverlay } from './ErrorOverlay'
 
 export default {
-	title: 'Components/ErrorOverlay',
-	component: ErrorOverlay,
 	argTypes: {
 		backgroundColor: { control: 'color' },
 	},
+	component: ErrorOverlay,
+	parameters: {
+		layout: 'fullscreen',
+	},
+	title: 'Components/ErrorOverlay',
 } as ComponentMeta<typeof ErrorOverlay>
 
 const Template: ComponentStory<typeof ErrorOverlay> = args => (

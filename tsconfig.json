@@ -18,6 +18,7 @@
 			"@contexts/*": ["contexts/*"],
 			"@hooks/*": ["hooks/*"],
 			"@interfaces/*": ["interfaces/*"],
+			"@layouts/*": ["layouts/*"],
 			"@pages/*": ["pages/*"],
 			"@services/*": ["services/*"],
 			"@utils/*": ["utils/*"]
