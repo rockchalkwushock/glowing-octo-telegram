@@ -19,8 +19,11 @@
 		"format": "prettier . --write --ignore-unknown",
 		"lint": "eslint --cache --fix --ext .js,.ts,.tsx src",
 		"preview": "vite preview",
-		"test": "vitest",
+		"test": "vitest run",
+		"test:ci": "vitest run --passWithNoTests",
+		"test:lefthook": "vitest related",
 		"test:ui": "vitest --ui",
+		"test:watch": "vitest dev",
 		"type-check": "tsc"
 	},
 	"dependencies": {
@@ -28,6 +31,7 @@
 		"react-dom": "~18.2.0"
 	},
 	"devDependencies": {
+		"@evilmartians/lefthook": "~1.0.1",
 		"@testing-library/jest-dom": "~5.16.4",
 		"@testing-library/react": "~13.3.0",
 		"@testing-library/react-hooks": "~8.0.1",
