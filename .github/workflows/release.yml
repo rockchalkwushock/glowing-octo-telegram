@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - 'production'
+
+# env:
+#   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+#   FLY_ORG: ${{ secrets.FLY_ORG }}
+#   FLY_REGION: ${{ secrets.FLY_REGION }}
+
+jobs:
+  deploy_release:
+    runs-on: ubuntu-latest
+
+    # concurrency:
+    #   group: pr-${{ github.event.number }}
+
+    # environment:
+    #   name: pr-${{ github.event.number }}
+    #   url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: 16
+
+      - run: yarn install --frozen-lockfile
+        env:
+          CI: true
+
+      - run: yarn build
+        env:
+          NODE_ENV: production
+
+      # - uses: brentd/fly-staging-app@v1
+      #   id: deploy
+
+      # - uses: strumwolf/delete-deployment-environment@v2
+      #   if: ${{ github.event.action == 'closed' }}
+      #   with:
+      #     environment: pr-${{ github.event.number }}
+      #     token: ${{ github.token }}
