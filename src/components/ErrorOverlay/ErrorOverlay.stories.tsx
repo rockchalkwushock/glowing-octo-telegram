@@ -3,9 +3,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ErrorOverlay } from './ErrorOverlay'
 
 export default {
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
 	component: ErrorOverlay,
 	parameters: {
 		layout: 'fullscreen',

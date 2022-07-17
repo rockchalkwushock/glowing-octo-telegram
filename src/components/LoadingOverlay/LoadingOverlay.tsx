@@ -6,7 +6,7 @@ type Props = {
 
 export const LoadingOverlay: FC<Props> = ({ children }) => {
 	return (
-		<div className='flex flex-col justify-center items-center w-screen h-screen'>
+		<div className='flex h-screen w-screen flex-col items-center justify-center'>
 			<h1>Loading...</h1>
 			{children}
 		</div>
