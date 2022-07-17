@@ -7,9 +7,11 @@ Template for starting a React Application.
 Template contains:
 
 - `eslint`
+- `msw`
 - `react-query`
 - `react-router-dom`
 - `storybook`
+- `stylelint`
 - `tailwindcss`
 - `typescript`
 - `vite`
