@@ -37,4 +37,12 @@ export const parameters: Parameters = {
 			date: /Date$/,
 		},
 	},
+	options: {
+		storySort: {
+			includeName: true,
+			locales: 'en-US',
+			method: 'alphabetical',
+			order: ['Components', 'Pages'],
+		},
+	},
 }

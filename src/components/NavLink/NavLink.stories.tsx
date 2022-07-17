@@ -3,9 +3,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import { NavLink } from './NavLink'
 
 export default {
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
 	component: NavLink,
 	parameters: {
 		layout: 'centered',

@@ -1,18 +1,25 @@
-/// <reference types="vitest" />
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import aliases from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [aliases(), react()],
+	plugins: [
+		// Reads "paths" in tsconfig.json and adds aliases.
+		{
+			...aliases(),
+			enforce: 'pre',
+		},
+		react(),
+		{
+			// Vite no longer by default does vendor chunk splitting.
+			...splitVendorChunkPlugin(),
+			apply: 'build',
+			enforce: 'post',
+		},
+	],
 	server: {
 		open: true,
 		port: 4000,
-	},
-	test: {
-		environment: 'jsdom',
-		globals: true,
-		setupFiles: ['./src/test/setup.ts'],
 	},
 })

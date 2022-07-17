@@ -3,14 +3,18 @@ pre-commit:
   # parallel: true
   commands:
     eslint:
-      exclude: 'main.js|preview.tsx'
+      exclude: 'main.ts|preview.tsx'
       files: git diff --name-only staging
       glob: '*.{js,ts,jsx,tsx}'
-      run: yarn lint {staged_files}
+      run: yarn lint:js {staged_files}
     prettier:
       files: git diff --name-only staging
       glob: '*.{js,json,md,mdx,ts,tsx,yaml,yml}'
       run: yarn format {staged_files}
+    stylelint:
+      files: git diff --name-only staging
+      glob: '*.css'
+      run: yarn lint:css {staged_files}
     vitest:
       files: git diff --name-only staging
       glob: '*.test.{js,ts,tsx}'

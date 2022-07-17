@@ -3,9 +3,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import { LoadingOverlay } from './LoadingOverlay'
 
 export default {
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
 	component: LoadingOverlay,
 	parameters: {
 		layout: 'fullscreen',
