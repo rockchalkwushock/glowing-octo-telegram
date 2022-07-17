@@ -3,7 +3,7 @@ pre-commit:
   # parallel: true
   commands:
     eslint:
-      exclude: 'main.js|preview.tsx'
+      exclude: 'main.ts|preview.tsx'
       files: git diff --name-only staging
       glob: '*.{js,ts,jsx,tsx}'
       run: yarn lint:js {staged_files}
@@ -12,7 +12,6 @@ pre-commit:
       glob: '*.{js,json,md,mdx,ts,tsx,yaml,yml}'
       run: yarn format {staged_files}
     stylelint:
-      exclude: 'main.js|preview.tsx'
       files: git diff --name-only staging
       glob: '*.css'
       run: yarn lint:css {staged_files}
