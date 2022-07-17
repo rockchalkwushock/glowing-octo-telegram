@@ -18,7 +18,7 @@
 		"coverage": "vitest run --coverage",
 		"dev": "vite",
 		"format": "prettier . --write --ignore-unknown",
-		"lint": "eslint --cache --fix --ext .ts,.tsx src && stylelint --cache --fix '**/*.css'",
+		"lint": "eslint --cache --fix --ext .ts,.tsx src && stylelint --cache --fix 'src/**/*.css' --ignore-path",
 		"preview": "vite preview",
 		"storybook": "start-storybook --port 6006",
 		"test": "vitest run --passWithNoTests",
