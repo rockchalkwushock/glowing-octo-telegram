@@ -42,7 +42,8 @@ jobs:
         env:
           CI: true
 
-      - run: yarn run lint
+      - run: yarn run lint:css
+      - run: yarn run lint:js
       - run: yarn run type-check
       - run: yarn test
         env:
