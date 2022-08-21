@@ -1,9 +1,9 @@
 import { ErrorOverlay } from '@components/ErrorOverlay'
-import type { ErrorInfo } from 'react'
+import type { ErrorInfo, ReactNode } from 'react'
 import { Component } from 'react'
 
 interface Props {
-	children: React.ReactNode
+	children: ReactNode
 }
 interface State {
 	hasError: boolean
