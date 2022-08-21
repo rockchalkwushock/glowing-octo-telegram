@@ -1,9 +1,9 @@
-export type { UseQueryResult } from 'react-query'
+export type { UseQueryResult } from '@tanstack/react-query'
 export {
 	QueryClient as DataClient,
 	QueryClientProvider as DataProvider,
-} from 'react-query'
-export { ReactQueryDevtools as DataDevtools } from 'react-query/devtools'
+} from '@tanstack/react-query'
+export { ReactQueryDevtools as DataDevtools } from '@tanstack/react-query-devtools'
 
 let endpointUrl: string
 

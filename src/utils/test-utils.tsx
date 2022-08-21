@@ -13,7 +13,13 @@ export const createWrapper = (): JSXElementConstructor<{
 	// eslint-disable-next-line react/display-name
 	return ({ children }) => (
 		<DataProvider
-			client={new DataClient({ defaultOptions: { queries: { retry: false } } })}
+			client={
+				new DataClient({
+					defaultOptions: { queries: { retry: false } },
+					// eslint-disable-next-line @typescript-eslint/no-empty-function
+					logger: { error: () => {}, log: console.log, warn: console.warn },
+				})
+			}
 		>
 			<Router>{children}</Router>
 		</DataProvider>
